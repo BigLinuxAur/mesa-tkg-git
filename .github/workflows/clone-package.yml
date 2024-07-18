@@ -31,13 +31,13 @@ jobs:
         if: ${{ ! inputs.debug_enabled }}
         shell: bash
         run: |
-          repo=$(cut -d "/" -f2 <<< ${{ github.repository }})
+          # repo=$(cut -d "/" -f2 <<< ${{ github.repository }})
           if [ -d "$repo" ];then
             rm -rf $repo
           fi
-          git clone https://aur.archlinux.org/$(cut -d "/" -f2 <<< $repo).git
+          git clone https://github.com/Frogging-Family/mesa-git
           ls
-          rm -rf $repo/.git
+          rm -rf mesa-git/.git
 
       - name: Setup TMATE Session
         uses: mxschmitt/action-tmate@v3
