@@ -31,9 +31,9 @@ jobs:
         if: ${{ ! inputs.debug_enabled }}
         shell: bash
         run: |
-          # repo=$(cut -d "/" -f2 <<< ${{ github.repository }})
-          if [ -d "$repo" ];then
-            rm -rf $repo
+          # repo=https://github.com/Frogging-Family/mesa-git
+          if [ -d "mesa-git" ];then
+            rm -rf mesa-git
           fi
           git clone https://github.com/Frogging-Family/mesa-git
           ls
